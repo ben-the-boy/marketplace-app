@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
-//import ItemInput from '../components/items/ItemInput';
-//import Items from '../components/items/Items';
+import ItemInput from '../components/items/ItemInput';
+import Items from '../components/items/Items';
 import { connect } from 'react-redux';
 
+let item0;
+let item1;
+
 class ItemsContainer extends Component {
+  state = {
+    items: [item0, item1]
+  }
+
   render() {
     return (
       <div>
-        <input type="text" />
+        <Items items={this.state.items} />
       </div>
     )
   }
