@@ -1,7 +1,7 @@
-const Item = ({name}) => {
+const Item = ({item}) => {
   return (
     <div>
-      <li>{name}</li>
+      <li>{item.name}</li>
     </div>
   )
 }
