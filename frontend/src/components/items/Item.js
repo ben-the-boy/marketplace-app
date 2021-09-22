@@ -1,7 +1,7 @@
 const Item = ({name}) => {
   return (
     <div>
-      <li>item{name}</li>
+      <li>{name}</li>
     </div>
   )
 }

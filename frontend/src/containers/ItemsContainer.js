@@ -4,18 +4,27 @@ import Items from '../components/items/Items';
 import { connect } from 'react-redux';
 
 class ItemsContainer extends Component {
-  state = {
-    items: []
-  }
 
   render() {
     return (
       <div>
-        <ItemInput />
-        <Items items={this.state.items} />
+        <ItemInput addItem={this.props.addItem}/>
+        <Items items={this.props.items} />
       </div>
     )
   }
 }
 
-export default ItemsContainer;
+const mapStateToProps = (state) => {
+  return {
+    items: state.items
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addItem: item => dispatch({type: "ADD_ITEM", item: item})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItemsContainer);

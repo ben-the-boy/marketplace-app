@@ -3,9 +3,10 @@ export default function manageItems(state = {
 }, action) {
   switch (action.type) {
     case 'ADD_ITEM':
-      const item = { name: action.name, description: action.description }
+      const item = { name: action.item.name, description: action.item.description }
+      console.log(item)
       return {
-        items: [ ...state.items, item]
+        items: [...state.items, item]
       }
 
     default:
