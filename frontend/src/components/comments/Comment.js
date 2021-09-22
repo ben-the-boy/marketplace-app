@@ -1,6 +1,9 @@
 const Comment = ({comment}) => {
+
   return (
-    <li>{comment.content}</li>
+    <div>
+      <li>{comment.content}</li>
+    </div>
   )
 }
 

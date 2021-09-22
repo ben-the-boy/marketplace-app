@@ -1,7 +1,12 @@
+import CommentsContainer from '../../containers/CommentsContainer';
+
 const Item = ({item}) => {
   return (
     <div>
-      <li>{item.name}</li>
+      <li>
+        {item.name}
+        <CommentsContainer itemId={item.id}/>
+      </li>
     </div>
   )
 }

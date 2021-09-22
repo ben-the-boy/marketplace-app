@@ -3,21 +3,29 @@ import CommentInput from '../components/comments/CommentInput';
 import Comments from '../components/comments/Comments';
 import { connect } from 'react-redux';
 
-let comment0;
-let comment1;
 
 class CommentsContainer extends Component {
-  state = {
-    items: [comment0, comment1]
-  }
 
   render() {
     return (
       <div>
-        <Comments comments={this.state.comments} />
+        <Comments comments={this.props.comments} itemId={this.props.itemId}/>
+        <CommentInput addComment={this.props.addComment} itemId={this.props.itemId}/>
       </div>
     )
   }
 }
 
-export default CommentsContainer;
+const mapStateToProps = (state) => {
+  return {
+    comments: state.comments
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addComment: comment => dispatch({type: 'ADD_COMMENT', comment})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommentsContainer);
