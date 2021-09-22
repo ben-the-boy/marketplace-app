@@ -3,17 +3,15 @@ import ItemInput from '../components/items/ItemInput';
 import Items from '../components/items/Items';
 import { connect } from 'react-redux';
 
-let item0;
-let item1;
-
 class ItemsContainer extends Component {
   state = {
-    items: [item0, item1]
+    items: []
   }
 
   render() {
     return (
       <div>
+        <ItemInput />
         <Items items={this.state.items} />
       </div>
     )
