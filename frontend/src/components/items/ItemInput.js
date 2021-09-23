@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 
 class ItemInput extends Component {
+
   state = {
     name: '',
     description: ''
@@ -27,6 +30,7 @@ class ItemInput extends Component {
       name: '',
       description: ''
     })
+    this.props.history.push("/items");
   }
 
   render() {
@@ -46,4 +50,10 @@ class ItemInput extends Component {
   }
 }
 
-export default ItemInput;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addItem: item => dispatch({type: "ADD_ITEM", item: item})
+  }
+}
+
+export default connect(null, mapDispatchToProps)(ItemInput);
