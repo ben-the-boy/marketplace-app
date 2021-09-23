@@ -1,11 +1,17 @@
 import CommentsContainer from '../../containers/CommentsContainer';
 
-const Item = ({item}) => {
+const Item = (props) => {
+
+  let handleOnClick = () => {
+    props.deleteItem(props.item)
+  }
+
   return (
     <div>
       <li>
-        {item.name}
-        <CommentsContainer itemId={item.id}/>
+        {props.item.name}
+        <button onClick={() => handleOnClick()}> X </button>
+        <CommentsContainer itemId={props.item.id}/>
       </li>
     </div>
   )

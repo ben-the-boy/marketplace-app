@@ -1,14 +1,12 @@
 import Comment from './Comment';
 
-const Comments = ({comments, itemId}) => {
+const Comments = (props) => {
 
-  const associatedComments = comments.filter(comment => comment.itemId === itemId)
-
-  console.log(associatedComments)
+  const associatedComments = props.comments.filter(comment => comment.itemId === props.itemId)
 
   return (
     <ul>
-      {associatedComments.map((comment) => <Comment key={comment.id} comment={comment}/>)}
+      {associatedComments.map((comment) => <Comment key={comment.id} comment={comment} deleteComment={props.deleteComment}/>)}
     </ul>
   )
 }

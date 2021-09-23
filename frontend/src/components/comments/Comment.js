@@ -1,8 +1,13 @@
-const Comment = ({comment}) => {
+const Comment = (props) => {
+
+  let handleOnClick = () => {
+    props.deleteComment(props.comment)
+  }
 
   return (
     <div>
-      <li>{comment.content}</li>
+      <li>{props.comment.content}</li>
+      <button onClick={() => handleOnClick()}> X </button>
     </div>
   )
 }

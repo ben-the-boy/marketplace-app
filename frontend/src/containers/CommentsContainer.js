@@ -9,7 +9,7 @@ class CommentsContainer extends Component {
   render() {
     return (
       <div>
-        <Comments comments={this.props.comments} itemId={this.props.itemId}/>
+        <Comments comments={this.props.comments} itemId={this.props.itemId} deleteComment={this.props.deleteComment}/>
         <CommentInput addComment={this.props.addComment} itemId={this.props.itemId}/>
       </div>
     )
@@ -24,7 +24,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addComment: comment => dispatch({type: 'ADD_COMMENT', comment})
+    addComment: comment => dispatch({type: 'ADD_COMMENT', comment}),
+    deleteComment: comment => dispatch({type: 'DELETE_COMMENT', id: comment.id})
   }
 }
 

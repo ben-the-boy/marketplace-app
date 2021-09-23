@@ -9,7 +9,7 @@ class ItemsContainer extends Component {
     return (
       <div>
         <ItemInput addItem={this.props.addItem}/>
-        <Items items={this.props.items} />
+        <Items items={this.props.items} deleteItem={this.props.deleteItem}/>
       </div>
     )
   }
@@ -23,7 +23,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addItem: item => dispatch({type: "ADD_ITEM", item: item})
+    addItem: item => dispatch({type: "ADD_ITEM", item: item}),
+    deleteItem: item => dispatch({type: "DELETE_ITEM", id: item.id})
   }
 }
 
