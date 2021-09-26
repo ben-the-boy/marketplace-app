@@ -5,6 +5,12 @@ export default function manageItems(state = {
   comments: []
 }, action) {
   switch (action.type) {
+    case 'LOAD_ITEMS':
+      return {
+        ...state,
+        items: action.items,
+      }
+
     case 'ADD_ITEM':
       const item = { name: action.item.name, description: action.item.description, id: cuid() }
       return {
