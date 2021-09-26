@@ -2,7 +2,7 @@ import Comment from './Comment';
 
 const Comments = (props) => {
 
-  const associatedComments = props.comments.filter(comment => comment.itemId === props.itemId)
+  const associatedComments = props.comments.filter(comment => comment.item_id === props.itemId)
 
   return (
     <ul>
