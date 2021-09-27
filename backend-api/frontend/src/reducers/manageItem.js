@@ -6,10 +6,11 @@ export default function manageItems(state = {
 }, action) {
   switch (action.type) {
     case 'LOAD_ITEMS':
-      const commentsList = action.items.map(item => state.comments.concat(item.comments))
+      const commentsList = []
+      action.items.forEach(item => item.comments.forEach(comment => commentsList.push(comment)))
       return {
         items: action.items,
-        comments: commentsList[0]
+        comments: commentsList
       }
 
     case 'ADD_ITEM':
