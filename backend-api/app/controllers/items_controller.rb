@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    item = Item.create(name: params[:name])
   end
 
   def destroy

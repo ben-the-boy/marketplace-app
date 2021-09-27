@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { addItem } from '../../actions/addItem';
 
 
 class ItemInput extends Component {
@@ -25,7 +25,7 @@ class ItemInput extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.addItem(this.state);
+    addItem(this.state);
     this.setState({
       name: '',
       description: ''
@@ -50,10 +50,5 @@ class ItemInput extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addItem: item => dispatch({type: "ADD_ITEM", item: item})
-  }
-}
 
-export default connect(null, mapDispatchToProps)(ItemInput);
+export default ItemInput;
