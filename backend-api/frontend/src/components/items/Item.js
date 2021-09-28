@@ -1,9 +1,11 @@
 import CommentsContainer from '../../containers/CommentsContainer';
+import { destroyItem } from '../../actions/destroyItem';
 
 const Item = (props) => {
 
   let handleOnClick = () => {
-    props.deleteItem(props.item)
+    destroyItem(props.item);
+    props.deleteItem(props.item);
   }
 
   return (
