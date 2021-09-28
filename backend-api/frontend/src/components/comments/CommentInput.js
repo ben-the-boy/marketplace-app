@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { postComment } from '../../actions/postComment';
 
 class CommentInput extends Component {
   state = {
@@ -15,7 +16,7 @@ class CommentInput extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.addComment(this.state);
+    postComment(this.state, this.props.addComment);
     this.setState({
       ...this.state,
       content: ''

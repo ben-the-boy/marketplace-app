@@ -7,7 +7,10 @@ export default function manageItems(state = {
   switch (action.type) {
     case 'LOAD_ITEMS':
       const commentsList = []
-      action.items.forEach(item => item.comments.forEach(comment => commentsList.push(comment)))
+      action.items.forEach(item => item.comments.forEach(comment => {
+        const standardizedComment = { content: comment.content, itemId: comment.item_id, id: comment.id }
+        commentsList.push(standardizedComment)
+      }))
       return {
         items: action.items,
         comments: commentsList
@@ -25,7 +28,8 @@ export default function manageItems(state = {
       return {...state, items}
 
     case 'ADD_COMMENT':
-      const comment = { content: action.comment.content, itemId: action.comment.itemId, id: cuid() }
+      const comment = { content: action.comment.content, itemId: action.comment.item_id, id: action.comment.id}
+      console.log(action.comment)
       return {
         ...state,
         comments: [...state.comments, comment]
