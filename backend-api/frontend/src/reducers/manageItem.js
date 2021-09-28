@@ -29,7 +29,6 @@ export default function manageItems(state = {
 
     case 'ADD_COMMENT':
       const comment = { content: action.comment.content, itemId: action.comment.item_id, id: action.comment.id}
-      console.log(action.comment)
       return {
         ...state,
         comments: [...state.comments, comment]

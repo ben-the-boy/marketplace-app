@@ -1,7 +1,10 @@
+import { destroyComment } from '../../actions/destroyComment';
+
 const Comment = (props) => {
 
   let handleOnClick = () => {
-    props.deleteComment(props.comment)
+    destroyComment(props.comment);
+    props.deleteComment(props.comment);
   }
 
   return (
