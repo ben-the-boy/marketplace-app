@@ -16,12 +16,12 @@ export default function manageItems(state = {
         comments: commentsList
       }
 
-    case 'ADD_ITEM':
+    {/*case 'ADD_ITEM':
       const item = { name: action.item.name, description: action.item.description, id: cuid() }
       return {
         ...state,
         items: [...state.items, item]
-      }
+      }*/}
 
     case 'DELETE_ITEM':
       const items = state.items.filter(item => item.id !== action.id)

@@ -33,6 +33,7 @@ class ItemInput extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    if (this.state.name !== "" && this.state.description !== "" && this.state.imageUrl !== "") {
     postItem(this.state);
     this.setState({
       name: '',
@@ -40,6 +41,7 @@ class ItemInput extends Component {
       imageUrl: ''
     })
     this.props.history.push("/items");
+  }
   }
 
   render() {
