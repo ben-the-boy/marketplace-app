@@ -29,9 +29,15 @@ export default function manageItems(state = {
 
     case 'ADD_COMMENT':
       const comment = { content: action.comment.content, itemId: action.comment.item_id, id: action.comment.id}
-      return {
-        ...state,
-        comments: [...state.comments, comment]
+      if (comment.content !== "") {
+        return {
+          ...state,
+          comments: [...state.comments, comment]
+        }
+      } else {
+        return {
+          ...state
+        }
       }
 
     case 'DELETE_COMMENT':
