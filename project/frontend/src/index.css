@@ -13,12 +13,68 @@ code {
 }
 
 .item {
+  float: left;
   border-style: solid;
-  height: 250px;
+  height: 295px;
+  margin: 10px;
   overflow: auto;
+  width: 47%;
+  padding-left: 10px;
 }
 
 img {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comments-container {
+  border-style: solid;
+  margin: 20px;
+  padding: 10px;
+  width: 400px;
+}
+
+.delete-item {
+  float: right;
+  border: none;
+  background-color: white;
+}
+
+.delete-item:hover {
+  background-color: gray;
+}
+
+.delete-comment {
+  float: right;
+  border: none;
+  background-color: white;
+}
+
+.delete-comment:hover {
+  background-color: gray;
+}
+
+.navbar {
+  background-color: gray;
+}
+
+.navlink {
+  color: black;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.navlink:hover {
+  text-decoration: underline;
+}
+
+#new-item-form {
+  margin: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+  width: 500px;
 }

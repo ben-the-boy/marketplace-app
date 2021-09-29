@@ -10,16 +10,13 @@ const Item = (props) => {
 
   return (
     <div className="item">
+      <button className="delete-item" onClick={() => handleOnClick()}> X </button>
       <h3>
         {props.item.name}
-        <button className="delete-item" onClick={() => handleOnClick()}> X </button>
       </h3>
       <img src={props.item.image_url} alt=""/>
-      <br/>
       <h5>Description:</h5>
       <p>{props.item.description}</p>
-      <br/>
-      <h5>Replies:</h5>
       <CommentsContainer itemId={props.item.id}/>
     </div>
   )

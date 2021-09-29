@@ -44,7 +44,7 @@ class ItemInput extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form id="new-item-form" onSubmit={this.handleSubmit}>
         Item Name:
         <br/>
         <input type="text" onChange={this.handleNameChange} value={this.state.name}/>

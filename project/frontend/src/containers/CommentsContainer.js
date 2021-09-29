@@ -8,7 +8,8 @@ class CommentsContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="comments-container">
+        <h5>Replies:</h5>
         <Comments comments={this.props.comments} itemId={this.props.itemId} deleteComment={this.props.deleteComment}/>
         <CommentInput addComment={this.props.addComment} itemId={this.props.itemId}/>
       </div>
