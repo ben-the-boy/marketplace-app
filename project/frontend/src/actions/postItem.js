@@ -1,4 +1,4 @@
-export function addItem(state) {
+export function postItem(state) {
   fetch("http://localhost:3000/items", {
       method: "POST",
       headers: {

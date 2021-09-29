@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { addItem } from '../../actions/addItem';
+import { postItem } from '../../actions/postItem';
 
 
 class ItemInput extends Component {
@@ -25,7 +25,7 @@ class ItemInput extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    addItem(this.state);
+    postItem(this.state);
     this.setState({
       name: '',
       description: ''
