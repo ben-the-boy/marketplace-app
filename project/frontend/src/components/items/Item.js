@@ -9,12 +9,19 @@ const Item = (props) => {
   }
 
   return (
-    <div>
-      <li>
-        {props.item.name}
-        <button onClick={() => handleOnClick()}> X </button>
-        <CommentsContainer itemId={props.item.id}/>
-      </li>
+    <div className="item-info">
+      {props.item.name}
+      <button onClick={() => handleOnClick()}> X </button>
+      <br/>
+      <img src={props.item.image_url} alt=""/>
+      <br/>
+      Description:
+      <br/>
+      {props.item.description}
+      <br/>
+      Comments:
+      <br/>
+      <CommentsContainer itemId={props.item.id}/>
     </div>
   )
 }

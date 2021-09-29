@@ -6,7 +6,8 @@ export function postItem(state) {
       },
       body: JSON.stringify({
         name: state.name,
-        description: state.description
+        description: state.description,
+        image_url: state.imageUrl
       })
   })
 };

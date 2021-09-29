@@ -6,7 +6,8 @@ class ItemInput extends Component {
 
   state = {
     name: '',
-    description: ''
+    description: '',
+    imageUrl: ''
   };
 
   handleNameChange = (event) => {
@@ -23,12 +24,20 @@ class ItemInput extends Component {
     })
   }
 
+  handleImageChange = (event) => {
+    this.setState({
+      ...this.state,
+      imageUrl: event.target.value
+    })
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
     postItem(this.state);
     this.setState({
       name: '',
-      description: ''
+      description: '',
+      imageUrl: ''
     })
     this.props.history.push("/items");
   }
@@ -43,6 +52,10 @@ class ItemInput extends Component {
         Item Description:
         <br/>
         <textarea onChange={this.handleDescriptionChange} value={this.state.description}/>
+        <br/>
+        Image URL:
+        <br/>
+        <textarea onChange={this.handleImageChange} value={this.state.imageUrl}/>
         <br/>
         <input type="submit" value="Add Item"/>
       </form>
