@@ -9,18 +9,17 @@ const Item = (props) => {
   }
 
   return (
-    <div className="item-info">
-      {props.item.name}
-      <button onClick={() => handleOnClick()}> X </button>
-      <br/>
+    <div className="item">
+      <h3>
+        {props.item.name}
+        <button className="delete-item" onClick={() => handleOnClick()}> X </button>
+      </h3>
       <img src={props.item.image_url} alt=""/>
       <br/>
-      Description:
+      <h5>Description:</h5>
+      <p>{props.item.description}</p>
       <br/>
-      {props.item.description}
-      <br/>
-      Comments:
-      <br/>
+      <h5>Replies:</h5>
       <CommentsContainer itemId={props.item.id}/>
     </div>
   )

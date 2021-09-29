@@ -11,7 +11,7 @@ class ItemsContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="items-container">
         <Items items={this.props.items} deleteItem={this.props.deleteItem}/>
       </div>
     )

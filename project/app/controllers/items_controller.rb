@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    Item.create(name: params[:name])
+    Item.create(name: params[:name], description: params[:description], image_url: params[:image_url])
   end
 
   def show
